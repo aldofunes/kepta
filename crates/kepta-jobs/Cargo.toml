@@ -1,0 +1,18 @@
+[package]
+name = "kepta-jobs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+kepta-types = { workspace = true }
+kepta-db    = { workspace = true }
+sqlx = { workspace = true, features = ["postgres"] }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

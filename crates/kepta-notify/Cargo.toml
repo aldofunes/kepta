@@ -1,0 +1,23 @@
+[package]
+name = "kepta-notify"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+kepta-types = { workspace = true }
+kepta-db    = { workspace = true }
+lettre = { workspace = true }
+reqwest = { workspace = true }
+hmac = { workspace = true }
+sha2 = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+hex = { workspace = true }
+tracing = { workspace = true }

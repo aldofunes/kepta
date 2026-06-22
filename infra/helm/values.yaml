@@ -1,0 +1,42 @@
+replicaCount:
+  api: 2
+  worker: 1
+
+image:
+  api: ghcr.io/aldofunes/kepta/api
+  worker: ghcr.io/aldofunes/kepta/worker
+  web: ghcr.io/aldofunes/kepta/web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+api:
+  baseUrl: "https://app.kepta.app"
+  billingEnabled: false
+  jwtSecret: ""          # required — set via --set or existing secret
+
+s3:
+  bucket: kepta
+  region: us-east-1
+  endpoint: ""           # set for MinIO / custom S3
+  accessKeyId: ""
+  secretAccessKey: ""
+
+smtp:
+  host: ""
+  port: 587
+  username: ""
+  password: ""
+  from: "Kepta <noreply@kepta.app>"
+
+postgresql:
+  enabled: true
+  auth:
+    database: kepta
+    username: kepta
+    password: ""         # required
+
+ingress:
+  enabled: true
+  className: nginx
+  host: kepta.example.com
+  tls: true

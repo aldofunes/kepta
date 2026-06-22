@@ -1,0 +1,14 @@
+[package]
+name = "kepta-ui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+kepta-types = { workspace = true }
+leptos = { workspace = true }
+leptos_router = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }

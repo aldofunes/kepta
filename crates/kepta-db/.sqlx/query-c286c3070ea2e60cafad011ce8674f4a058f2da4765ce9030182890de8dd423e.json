@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO household_members (household_id, user_id, role, joined_at)\n        VALUES ($1, $2, 'owner', NOW())\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "c286c3070ea2e60cafad011ce8674f4a058f2da4765ce9030182890de8dd423e"
+}

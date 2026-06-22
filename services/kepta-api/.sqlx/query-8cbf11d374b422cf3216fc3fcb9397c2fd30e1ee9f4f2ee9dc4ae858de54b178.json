@@ -1,0 +1,103 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO households (name, address, year_built, sqft)\n        VALUES ($1, $2, $3, $4)\n        RETURNING id, name, address, year_built, sqft, created_at, updated_at\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "name",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "name"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "address",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "address"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "year_built",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "year_built"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "sqft",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "sqft"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "created_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "created_at"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "updated_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "updated_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Jsonb",
+        "Int4",
+        "Int4"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "8cbf11d374b422cf3216fc3fcb9397c2fd30e1ee9f4f2ee9dc4ae858de54b178"
+}

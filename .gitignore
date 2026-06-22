@@ -1,0 +1,21 @@
+/target
+/dist
+**/*.orig
+.env
+.env.*
+!.env.example
+*.pem
+*.p8
+
+# Tauri
+/desktop/kepta-tauri/target
+WixTools
+
+# iOS
+ios/build/
+ios/.build/
+ios/DerivedData/
+*.xcuserstate
+
+# Infra
+infra/helm/*.tgz

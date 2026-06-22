@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO oauth_accounts (user_id, provider, provider_sub)\n        VALUES ($1, $2, $3)\n        ON CONFLICT (provider, provider_sub) DO NOTHING\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "55008f8e47b67f280c8ab1917f46c120fb525528a4f48984d8854b5fa9f2cd50"
+}

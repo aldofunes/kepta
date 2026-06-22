@@ -1,0 +1,27 @@
+[package]
+name = "kepta-worker"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "kepta-worker"
+path = "src/main.rs"
+
+[dependencies]
+kepta-types   = { workspace = true }
+kepta-domain  = { workspace = true }
+kepta-db      = { workspace = true }
+kepta-storage = { workspace = true }
+kepta-notify  = { workspace = true }
+kepta-jobs    = { workspace = true }
+sqlx = { workspace = true, features = ["postgres"] }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+anyhow = { workspace = true }
+config = { workspace = true }

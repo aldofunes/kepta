@@ -1,0 +1,98 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT id, slug, name, price_cents, household_limit, storage_limit_mb, document_limit FROM subscription_plans WHERE slug = 'free'",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "slug",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "slug"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "name",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "name"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "price_cents",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "price_cents"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "household_limit",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "household_limit"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "storage_limit_mb",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "storage_limit_mb"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "document_limit",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "subscription_plans",
+            "name": "document_limit"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "478e433caceef73ce2450733fffe01e94154ffd88ac0b9ee34bd29e52984351e"
+}

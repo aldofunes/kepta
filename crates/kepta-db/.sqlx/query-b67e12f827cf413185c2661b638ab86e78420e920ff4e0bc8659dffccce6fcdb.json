@@ -1,0 +1,185 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT id, household_id, room_id, category, name, brand, model_number,\n               serial_number, purchase_date, install_date, warranty_expiry, notes,\n               created_at, updated_at\n        FROM items\n        WHERE id = $1 AND household_id = $2 AND deleted_at IS NULL\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "household_id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "household_id"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "room_id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "room_id"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "category",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "category"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "name",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "name"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "brand",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "brand"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "model_number",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "model_number"
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "serial_number",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "serial_number"
+          }
+        }
+      },
+      {
+        "ordinal": 8,
+        "name": "purchase_date",
+        "type_info": "Date",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "purchase_date"
+          }
+        }
+      },
+      {
+        "ordinal": 9,
+        "name": "install_date",
+        "type_info": "Date",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "install_date"
+          }
+        }
+      },
+      {
+        "ordinal": 10,
+        "name": "warranty_expiry",
+        "type_info": "Date",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "warranty_expiry"
+          }
+        }
+      },
+      {
+        "ordinal": 11,
+        "name": "notes",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "notes"
+          }
+        }
+      },
+      {
+        "ordinal": 12,
+        "name": "created_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "created_at"
+          }
+        }
+      },
+      {
+        "ordinal": 13,
+        "name": "updated_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "items",
+            "name": "updated_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "b67e12f827cf413185c2661b638ab86e78420e920ff4e0bc8659dffccce6fcdb"
+}

@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE jobs\n        SET status = CASE WHEN attempts >= max_attempts THEN 'failed' ELSE 'pending' END,\n            error = $2,\n            run_at = NOW() + INTERVAL '5 minutes',\n            updated_at = NOW()\n        WHERE id = $1\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "5232cd7f541cf542528bf06d143fa4267e606df85c9cea69a3d22900b70e758c"
+}

@@ -1,0 +1,106 @@
+[workspace]
+members = [
+    "crates/kepta-types",
+    "crates/kepta-domain",
+    "crates/kepta-db",
+    "crates/kepta-auth",
+    "crates/kepta-storage",
+    "crates/kepta-notify",
+    "crates/kepta-jobs",
+    "crates/kepta-sync",
+    "crates/kepta-localdb",
+    "services/kepta-api",
+    "services/kepta-worker",
+    "frontend/kepta-ui",
+    "frontend/kepta-web",
+    "desktop/kepta-tauri",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/aldofunes/kepta"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Web framework
+axum = { version = "0.8", features = ["macros", "multipart"] }
+tower = "0.5"
+tower-http = { version = "0.7", features = ["cors", "trace", "compression-gzip", "request-id", "sensitive-headers"] }
+
+# Database
+sqlx = { version = "0.9", features = ["runtime-tokio", "tls-rustls-aws-lc-rs", "uuid", "chrono", "json", "migrate", "macros"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Types
+uuid = { version = "1", features = ["v7", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# Error handling
+anyhow = "1"
+thiserror = "2"
+
+# Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Auth
+jsonwebtoken = { version = "10", features = ["rust_crypto"] }
+argon2 = "0.5"
+rand_core = { version = "0.6", features = ["std"] }
+
+# Crypto (webhooks HMAC)
+hmac = "0.12"
+sha2 = "0.10"
+
+# OpenAPI
+aide = { version = "=0.16.0-alpha.4", features = ["axum", "axum-json", "axum-extra", "axum-extra-headers", "axum-query", "redoc", "scalar"] }
+schemars = { version = "1", features = ["uuid1", "chrono04"] }
+async-trait = "0.1"
+axum-extra = { version = "0.12", features = ["typed-header"] }
+hex = "0.4"
+
+# HTTP client
+reqwest = { version = "0.13", features = ["json", "rustls"], default-features = false }
+
+# Email
+lettre = { version = "0.11", features = ["tokio1-rustls-tls", "smtp-transport", "builder"], default-features = false }
+
+# Object storage
+object_store = { version = "0.13", features = ["aws"] }
+
+# Config
+config = "0.15"
+
+# Frontend
+leptos = { version = "0.7" }
+leptos_router = { version = "0.7" }
+
+# Internal crates
+kepta-types   = { path = "crates/kepta-types" }
+kepta-domain  = { path = "crates/kepta-domain" }
+kepta-db      = { path = "crates/kepta-db" }
+kepta-auth    = { path = "crates/kepta-auth" }
+kepta-storage = { path = "crates/kepta-storage" }
+kepta-notify  = { path = "crates/kepta-notify" }
+kepta-jobs    = { path = "crates/kepta-jobs" }
+kepta-sync    = { path = "crates/kepta-sync" }
+kepta-localdb = { path = "crates/kepta-localdb" }
+kepta-ui      = { path = "frontend/kepta-ui" }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = true

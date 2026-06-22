@@ -1,0 +1,160 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT id, household_id, item_id, type AS doc_type, title, file_key,\n               file_size_bytes, mime_type, ocr_status, uploaded_by, created_at, updated_at\n        FROM documents\n        WHERE household_id = $1 AND deleted_at IS NULL\n        ORDER BY created_at DESC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "household_id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "household_id"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "item_id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "item_id"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "doc_type",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "type"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "title",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "title"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "file_key",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "file_key"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "file_size_bytes",
+        "type_info": "Int8",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "file_size_bytes"
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "mime_type",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "mime_type"
+          }
+        }
+      },
+      {
+        "ordinal": 8,
+        "name": "ocr_status",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "ocr_status"
+          }
+        }
+      },
+      {
+        "ordinal": 9,
+        "name": "uploaded_by",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "uploaded_by"
+          }
+        }
+      },
+      {
+        "ordinal": 10,
+        "name": "created_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "created_at"
+          }
+        }
+      },
+      {
+        "ordinal": 11,
+        "name": "updated_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "documents",
+            "name": "updated_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "33638448953f87bbcd158e8837f065186cace65376e3e4212c04561546d16fb9"
+}

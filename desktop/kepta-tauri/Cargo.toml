@@ -1,0 +1,29 @@
+[package]
+name = "kepta-tauri"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "kepta-tauri"
+path = "src/main.rs"
+
+[lib]
+name = "kepta_tauri_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+kepta-types   = { workspace = true }
+kepta-sync    = { workspace = true }
+kepta-localdb = { workspace = true }
+tauri = { version = "2", features = ["protocol-asset", "tray-icon"] }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }

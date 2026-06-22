@@ -1,0 +1,24 @@
+[package]
+name = "kepta-auth"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+kepta-types = { workspace = true }
+kepta-db    = { workspace = true }
+jsonwebtoken = { workspace = true }
+argon2 = { workspace = true }
+rand_core = { workspace = true }
+axum = { workspace = true }
+aide = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+axum-extra = { workspace = true }
+async-trait = { workspace = true }
+reqwest = { workspace = true }

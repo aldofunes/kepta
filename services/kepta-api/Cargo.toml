@@ -1,0 +1,51 @@
+[package]
+name = "kepta-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "kepta_api"
+path = "src/lib.rs"
+
+[[bin]]
+name = "kepta-api"
+path = "src/main.rs"
+
+[dependencies]
+kepta-types   = { workspace = true }
+kepta-domain  = { workspace = true }
+kepta-db      = { workspace = true }
+kepta-auth    = { workspace = true }
+kepta-storage = { workspace = true }
+kepta-notify  = { workspace = true }
+kepta-jobs    = { workspace = true }
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+aide = { workspace = true }
+schemars = { workspace = true }
+sqlx = { workspace = true, features = ["postgres"] }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+config = { workspace = true }
+object_store = { workspace = true }
+
+[dev-dependencies]
+kepta-auth    = { workspace = true }
+kepta-db      = { workspace = true }
+kepta-jobs    = { workspace = true }
+kepta-storage = { workspace = true }
+reqwest = { workspace = true }
+serde_json = { workspace = true }
+sqlx = { workspace = true, features = ["postgres"] }
+tokio = { workspace = true }
+tracing-subscriber = { workspace = true }
+uuid = { workspace = true }

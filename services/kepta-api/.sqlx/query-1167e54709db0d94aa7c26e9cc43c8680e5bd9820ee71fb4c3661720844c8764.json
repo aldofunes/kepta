@@ -1,0 +1,100 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT h.id, h.name, h.address, h.year_built, h.sqft, h.created_at, h.updated_at\n        FROM households h\n        JOIN household_members hm ON hm.household_id = h.id\n        WHERE hm.user_id = $1 AND hm.joined_at IS NOT NULL\n        ORDER BY h.created_at DESC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "name",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "name"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "address",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "address"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "year_built",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "year_built"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "sqft",
+        "type_info": "Int4",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "sqft"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "created_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "created_at"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "updated_at",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "households",
+            "name": "updated_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "1167e54709db0d94aa7c26e9cc43c8680e5bd9820ee71fb4c3661720844c8764"
+}
